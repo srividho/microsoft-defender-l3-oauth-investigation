@@ -1,0 +1,15 @@
+EntraIdSignInEvents
+| where AccountUpn == "sriadmin@srientralab.onmicrosoft.com"
+| where UserAgent contains "Python"
+| project
+    Timestamp,
+    Application,
+    ApplicationId,
+    IPAddress,
+    UserAgent,
+    ClientAppUsed,
+    EndpointCall,
+    AuthenticationRequirement,
+    ErrorCode,
+    SessionId
+| order by Timestamp asc

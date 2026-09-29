@@ -1,0 +1,11 @@
+AuditLogs
+| where TimeGenerated between (datetime(2026-09-26) .. datetime(2026-09-30))
+| where tostring(InitiatedBy) contains "sriadmin"
+| project
+    TimeGenerated,
+    OperationName,
+    Result,
+    ResultDescription,
+    Category,
+    ActivityDisplayName
+| order by TimeGenerated asc

@@ -1,0 +1,15 @@
+EntraIdSignInEvents
+| where AccountUpn == "sriadmin@srientralab.onmicrosoft.com"
+| where SessionId == "008d53ca-6003-9a6f-5309-e40c17b416c5"
+| project
+    Timestamp,
+    Application,
+    ApplicationId,
+    IPAddress,
+    UserAgent,
+    ClientAppUsed,
+    EndpointCall,
+    ErrorCode,
+    AuthenticationRequirement,
+    SessionId
+| order by Timestamp asc

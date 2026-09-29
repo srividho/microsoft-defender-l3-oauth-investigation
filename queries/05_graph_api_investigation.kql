@@ -1,0 +1,17 @@
+GraphAPIAuditEvents
+| where Timestamp between (datetime(2026-09-26) .. datetime(2026-09-30))
+| where AccountObjectId != ""
+| where Scopes contains "Application.ReadWrite.All"
+| project
+    Timestamp,
+    AccountObjectId,
+    ApplicationId,
+    RequestMethod,
+    ResponseStatusCode,
+    Scopes,
+    RequestUri,
+    IpAddress,
+    TargetWorkload,
+    OperationId,
+    ClientRequestId
+| order by Timestamp asc

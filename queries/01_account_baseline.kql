@@ -1,0 +1,11 @@
+EntraIdSignInEvents
+| where AccountUpn == "sriadmin@srientralab.onmicrosoft.com"
+| summarize
+    TotalEvents = count(),
+    FirstSeen = min(Timestamp),
+    LastSeen = max(Timestamp),
+    Successful = countif(ErrorCode == 0),
+    Failed = countif(ErrorCode != 0),
+    UniqueIPs = dcount(IPAddress),
+    UniqueApplications = dcount(Application),
+    UniqueUserAgents = dcount(UserAgent)
