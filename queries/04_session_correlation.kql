@@ -1,6 +1,6 @@
 EntraIdSignInEvents
 | where AccountUpn == "sriadmin@srientralab.onmicrosoft.com"
-| where SessionId == "008d53ca-6003-9a6f-5309-e40c17b416c5"
+| where SessionId == "REDACTED_SESSION_ID"
 | project
     Timestamp,
     Application,
