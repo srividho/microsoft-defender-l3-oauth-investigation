@@ -1,6 +1,6 @@
 AuditLogs
 | where TimeGenerated between (datetime(2026-09-26) .. datetime(2026-09-30))
-| where tostring(InitiatedBy) contains "sriadmin"
+| where tostring(InitiatedBy) contains "REDACTED_ACCOUNT_ID"
 | project
     TimeGenerated,
     OperationName,
