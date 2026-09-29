@@ -1,5 +1,5 @@
 EntraIdSignInEvents
-| where AccountUpn == "sriadmin@srientralab.onmicrosoft.com"
+| where AccountUpn == "REDACTED_ACCOUNT_ID"
 | where UserAgent contains "Python"
 | project
     Timestamp,
